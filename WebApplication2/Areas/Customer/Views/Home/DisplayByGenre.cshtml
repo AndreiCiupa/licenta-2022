@@ -1,0 +1,344 @@
+﻿@model IEnumerable<WebApp.Models.Product>
+
+<div class="row pb-3">
+
+    <div class="row pb-3"></div>
+    <div style="text-align:center">
+        <a asp-area="Customer" asp-action="DisplayByGenre" class="btn btn-primary form-control" style="width:50%;">See all of our books</a>     
+    </div>
+    <div class="row pb-3"></div>
+
+    <div class="row pb-3">
+        <img src="~/images/1.jpg" style="width:100%;"/>
+
+         <div class="row pb-3"></div>
+        <div style="text-align:center">
+            <h3>SF</h3>
+        </div>
+         <div class="row pb-3"></div>
+
+         <div class="row pb-3" style="border:1px solid #008cba; border-radius: 5px; max-width:2000px; max-height: 700px; overflow: auto;">
+            @foreach(var product in Model.Where(u => u.CategoryId == 8))
+            {
+                <div class="col-lg-3 col-md-6">
+                    <div class="row p-2">
+                        <div class="col-12 p-1" style="border:1px solid #008cba; border-radius: 5px;">
+                            <div class="card">
+                                <img src="@product.ImageUrl" class="card-img-top rounded"/>
+
+                                <div class="card-body">
+                                <div class="pl-1">
+                                    <p class="card-title h5 text-primary">@product.Title</p>
+                                    <p class="card-title h5 text-secondary">by <b>@product.Author</b></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>List Price: <strike><b>@product.ListPrice.ToString("0.00 RON")</b></strike></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>As low as: <b>@product.Price100.ToString("0.00 RON")</b></p>
+                                </div>
+                                </div>
+
+                            </div>
+                            <div>
+                                <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId="@product.Id">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+          </div>
+
+        <div class="row pb-3"></div>
+    </div>
+
+    <div class="row pb-3">
+        <img src="~/images/2.jpg" style="width:100%;"/>
+
+        <div class="row pb-3"></div>
+        <div style="text-align:center">
+            <h3>Fantasy</h3>
+        </div>
+        <div class="row pb-3"></div>
+
+        <div class="row pb-3" style="border:1px solid #008cba; border-radius: 5px; max-width:2000px; max-height: 700px; overflow: auto;">
+         @foreach(var product in Model.Where(u => u.CategoryId == 9))
+            {
+                <div class="col-lg-3 col-md-6">
+                    <div class="row p-2">
+                        <div class="col-12 p-1" style="border:1px solid #008cba; border-radius: 5px;">
+                            <div class="card">
+                                <img src="@product.ImageUrl" class="card-img-top rounded"/>
+
+                                <div class="card-body">
+                                <div class="pl-1">
+                                    <p class="card-title h5 text-primary" >@product.Title</p>
+                                    <p class="card-title h5 text-secondary">by <b>@product.Author</b></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>List Price: <strike><b>@product.ListPrice.ToString("0.00 RON")</b></strike></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>As low as: <b>@product.Price100.ToString("0.00 RON")</b></p>
+                                </div>
+                                </div>
+
+                            </div>
+                            <div>
+                                <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId="@product.Id">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+            
+        <div class="row pb-3"></div>
+    </div>
+
+    <div class="row pb-3">
+        <img src="~/images/3.jpg" style="width:100%;"/>
+
+        <div class="row pb-3"></div>
+        <div style="text-align:center">
+            <h3>Romance</h3>
+        </div>
+        <div class="row pb-3"></div>
+
+        <div class="row pb-3" style="border:1px solid #008cba; border-radius: 5px; max-width:2000px; max-height: 700px; overflow: auto;">
+        @foreach(var product in Model.Where(u => u.CategoryId == 10))
+            {
+                <div class="col-lg-3 col-md-6">
+                    <div class="row p-2">
+                        <div class="col-12 p-1" style="border:1px solid #008cba; border-radius: 5px;">
+                            <div class="card">
+                                <img src="@product.ImageUrl" class="card-img-top rounded"/>
+
+                                <div class="card-body">
+                                <div class="pl-1">
+                                    <p class="card-title h5 text-primary">@product.Title</p>
+                                    <p class="card-title h5 text-secondary">by <b>@product.Author</b></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>List Price: <strike><b>@product.ListPrice.ToString("0.00 RON")</b></strike></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>As low as: <b>@product.Price100.ToString("0.00 RON")</b></p>
+                                </div>
+                                </div>
+
+                            </div>
+                            <div>
+                                <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId="@product.Id">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+            <div class="row pb-3"></div>
+    </div>
+
+    <div class="row pb-3">
+        <img src="~/images/4.jpg" style="width:100%;"/>
+
+        <div class="row pb-3"></div>
+        <div style="text-align:center">
+            <h3>Poetry</h3>
+        </div>
+        <div class="row pb-3"></div>
+
+        <div class="row pb-3" style="border:1px solid #008cba; border-radius: 5px; max-width:2000px; max-height: 700px; overflow: auto;">
+         @foreach(var product in Model.Where(u => u.CategoryId == 11))
+            {
+                <div class="col-lg-3 col-md-6">
+                    <div class="row p-2">
+                        <div class="col-12 p-1" style="border:1px solid #008cba; border-radius: 5px;">
+                            <div class="card">
+                                <img src="@product.ImageUrl" class="card-img-top rounded"/>
+
+                                <div class="card-body">
+                                <div class="pl-1">
+                                    <p class="card-title h5 text-primary">@product.Title</p>
+                                    <p class="card-title h5 text-secondary">by <b>@product.Author</b></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>List Price: <strike><b>@product.ListPrice.ToString("0.00 RON")</b></strike></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>As low as: <b>@product.Price100.ToString("0.00 RON")</b></p>
+                                </div>
+                                </div>
+
+                            </div>
+                            <div>
+                                <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId="@product.Id">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+            <div class="row pb-3"></div>
+    </div>
+
+    <div class="row pb-3">
+        <img src="~/images/5.jpg" style="width:100%;"/>
+
+        <div class="row pb-3"></div>
+         <div style="text-align:center">
+            <h3>Horror</h3>
+        </div>
+        <div class="row pb-3"></div>
+
+        <div class="row pb-3" style="border:1px solid #008cba; border-radius: 5px; max-width:2000px; max-height: 700px; overflow: auto;">
+         @foreach(var product in Model.Where(u => u.CategoryId == 12))
+            {
+                <div class="col-lg-3 col-md-6">
+                    <div class="row p-2">
+                        <div class="col-12 p-1" style="border:1px solid #008cba; border-radius: 5px;">
+                            <div class="card">
+                                <img src="@product.ImageUrl" class="card-img-top rounded"/>
+
+                                <div class="card-body">
+                                <div class="pl-1">
+                                    <p class="card-title h5 text-primary">@product.Title</p>
+                                    <p class="card-title h5 text-secondary">by <b>@product.Author</b></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>List Price: <strike><b>@product.ListPrice.ToString("0.00 RON")</b></strike></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>As low as: <b>@product.Price100.ToString("0.00 RON")</b></p>
+                                </div>
+                                </div>
+
+                            </div>
+                            <div>
+                                <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId="@product.Id">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+            <div class="row pb-3"></div>
+    </div>
+
+   <div class="row pb-3">
+        <img src="~/images/6.jpg" style="width:100%;"/>
+
+        <div class="row pb-3"></div>
+        <div style="text-align:center">
+            <h3>Thriller</h3>
+        </div>
+        <div class="row pb-3"></div>
+
+        <div class="row pb-3" style="border:1px solid #008cba; border-radius: 5px; max-width:2000px; max-height: 700px; overflow: auto;">
+         @foreach(var product in Model.Where(u => u.CategoryId == 13))
+            {
+                <div class="col-lg-3 col-md-6">
+                    <div class="row p-2">
+                        <div class="col-12 p-1" style="border:1px solid #008cba; border-radius: 5px;">
+                            <div class="card">
+                                <img src="@product.ImageUrl" class="card-img-top rounded"/>
+
+                                <div class="card-body">
+                                <div class="pl-1">
+                                    <p class="card-title h5 text-primary">@product.Title</p>
+                                    <p class="card-title h5 text-secondary">by <b>@product.Author</b></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>List Price: <strike><b>@product.ListPrice.ToString("0.00 RON")</b></strike></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>As low as: <b>@product.Price100.ToString("0.00 RON")</b></p>
+                                </div>
+                                </div>
+
+                            </div>
+                            <div>
+                                <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId="@product.Id">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+            <div class="row pb-3"></div>
+    </div>
+
+    <div class="row pb-3">
+        <img src="~/images/7.jpg" style="width:100%;"/>
+
+        <div class="row pb-3"></div>
+        <div style="text-align:center">
+            <h3>YA</h3>
+        </div>
+        <div class="row pb-3"></div>
+
+        <div class="row pb-3" style="border:1px solid #008cba; border-radius: 5px; max-width:2000px; max-height: 700px; overflow: auto;">
+         @foreach(var product in Model.Where(u => u.CategoryId == 14))
+            {
+                <div class="col-lg-3 col-md-6">
+                    <div class="row p-2">
+                        <div class="col-12 p-1" style="border:1px solid #008cba; border-radius: 5px;">
+                            <div class="card">
+                                <img src="@product.ImageUrl" class="card-img-top rounded"/>
+
+                                <div class="card-body">
+                                <div class="pl-1">
+                                    <p class="card-title h5 text-primary">@product.Title</p>
+                                    <p class="card-title h5 text-secondary">by <b>@product.Author</b></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>List Price: <strike><b>@product.ListPrice.ToString("0.00 RON")</b></strike></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>As low as: <b>@product.Price100.ToString("0.00 RON")</b></p>
+                                </div>
+                                </div>
+
+                            </div>
+                            <div>
+                                <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId="@product.Id">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+            <div class="row pb-3"></div>
+    </div>
+
+@*    @foreach(var product in Model.Where(u => u.CategoryId == 8))
+    {
+        <div class="col-lg-3 col-md-6">
+            <br>
+            <div class="row p-2">
+                <div class="col-12 p-1" style="border:1px solid #008cba; border-radius: 5px;">
+                    <div class="card">
+                        <img src="@product.ImageUrl" class="card-img-top rounded"/>
+
+                        <div class="card-body">
+                        <div class="pl-1">
+                            <p class="card-title h5 text-primary">@product.Title</p>
+                            <p class="card-title h5 text-secondary">by <b>@product.Author</b></p>
+                        </div>
+                        <div class="pl-1">
+                            <p>List Price: <strike><b>@product.ListPrice.ToString("0.00 RON")</b></strike></p>
+                        </div>
+                        <div class="pl-1">
+                            <p>As low as: <b>@product.Price100.ToString("0.00 RON")</b></p>
+                        </div>
+                        </div>
+
+                    </div>
+                    <div>
+                        <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId="@product.Id">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }*@
+</div>
